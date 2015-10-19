@@ -1,0 +1,23 @@
+$${
+TOGGLE(@afk);
+IF(@afk);
+	LOG("&e&lАФК режим включен");
+	SETLABEL(AWAYMETKA,"&c&l--- АФК РЕЖИМ ---");
+ELSE;
+	LOG("&a&lАФК режим выключен");
+	SETLABEL(AWAYMETKA,"&aАФКбот OFF");
+	IF(@&afkmes[0]);
+		ARRAYSIZE(@&afkmes,#size);
+		LOG("&e&lПолучены следующие сообщения (%#size%):");
+		#i=0;
+		DO;
+			&temp="%@&afkmes[%#i%]%";
+			LOG("%&temp%");
+			INC(#i);
+		WHILE(#i<#size);
+		UNSET(@&afkmes[]);
+	ELSE;
+		LOG("&e&lСообщений небыло:");
+	ENDIF;
+ENDIF;
+}$$

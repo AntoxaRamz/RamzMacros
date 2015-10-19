@@ -1,0 +1,9 @@
+$${
+IF(@afk);
+	IFMATCHES(%CHATCLEAN%,"^(.+?) \[ќт (.+?)\]: (.+)$");
+		MATCH(%CHATCLEAN%,"^(.+?) \[ќт (.+?)\]: (.+)$",{&time,&from,&msg});
+		@&afkmes[]="%TIME%: &3%&from%&f: &c%&msg%";
+		ECHO("/pm %&from% ј‘ бот: сообщение сохранено, € св€жусь с ¬ами в ближайшее врем€.");
+	ENDIF;
+ENDIF;
+}$$

@@ -1,0 +1,23 @@
+$${
+IF(DIMENSION = "SURFACE");
+#newdim=1;
+ENDIF;
+IF(DIMENSION = "NETHER");
+#newdim=2;
+ENDIF;
+IF(DIMENSION = "END");
+#newdim=3;
+ENDIF;
+IF(DIMENSION = "UNKNOWN");
+#newdim=4;
+ENDIF;
+IF(@#dim = 0);
+LOG("Нет сохранённой точки возврата");
+ENDIF;
+IF(@#dim = #newdim);
+ECHO("/tp %@#xxx%,%@#yyy%,%@#zzz%");
+ELSE;
+LOG("Мир не совпадает с сохраненной точкой");
+ENDIF;
+WAIT(100ms);
+}$$

@@ -1,0 +1,19 @@
+$${
+@#xxx=XPOS;
+@#yyy=YPOS;
+@#zzz=ZPOS;
+IF(DIMENSION = "SURFACE");
+@#dim=1;
+ENDIF;
+IF(DIMENSION = "NETHER");
+@#dim=2;
+ENDIF;
+IF(DIMENSION = "END");
+@#dim=3;
+ENDIF;
+IF(DIMENSION = "UNKNOWN");
+@#dim=4;
+ENDIF;
+WAIT(100ms);
+LOG("точка сохранена");
+}$$

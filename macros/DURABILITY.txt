@@ -1,0 +1,6 @@
+$${
+IF(DURABILITY <= 30);
+	LOG("Прочность %ITEM% на исходе!");
+	INVENTORYUP(1);
+ENDIF;
+}$$

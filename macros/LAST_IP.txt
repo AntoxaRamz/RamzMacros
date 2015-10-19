@@ -1,0 +1,22 @@
+$${ 
+&password = "";
+&antoxa = HTTPGET("http://antonr8t.bget.ru/mine_easy_ip.php?player=$$u&token=%&password%","",#antoxa2);
+IF(#antoxa2=200);
+	SPLIT(",","%&antoxa%",&ensemplix[]);
+	ARRAYSIZE(&ensemplix[],#antoxa3);
+	GUI(chat);
+	#i=0;
+	DO;
+		SET(&antoxa4,%&ensemplix[%#i%]%);
+		LOGTO(pmtext,"%&antoxa4%");
+		INC(#i);
+	WHILE(#i<#antoxa3);
+ELSEIF(#antoxa2=-1);
+	GUI(CHAT);
+	LOG("&cПревышено время ожидания ответа от api");
+	LOG("&cлибо сервер недоступен");
+ELSE;
+	GUI(CHAT);
+	LOG("&cОшибка. Ответ сервера: %#antoxa2%");
+ENDIF;
+}$$

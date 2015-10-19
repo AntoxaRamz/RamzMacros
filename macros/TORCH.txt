@@ -1,0 +1,13 @@
+$${
+DO;
+IF(RMOUSE && ITEM == "diamond_pickaxe");
+	#temp = INVSLOT;
+	GETSLOT("torch",#slot);
+	SLOT(%#slot%);
+	KEY(USE);
+	WAIT(50ms);
+	SLOT(%#temp%);
+	WAIT(100ms);
+ENDIF;
+LOOP;
+}$$
